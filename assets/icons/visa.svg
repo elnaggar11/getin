@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 60" width="180" height="60">
+  <defs>
+    <linearGradient id="visaGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f8f"/>
+      <stop offset="100%" style="stop-color:#10167a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- VISA wordmark — italic bold serif style -->
+  <text
+    x="90" y="47"
+    font-family="Times New Roman, Times, serif"
+    font-size="56"
+    font-weight="bold"
+    font-style="italic"
+    text-anchor="middle"
+    fill="url(#visaGrad)"
+    letter-spacing="-2"
+  >VISA</text>
+
+  <!-- Gold bottom bar (Visa brand detail) -->
+  <rect x="0" y="54" width="180" height="5" rx="2.5" fill="#f7a600"/>
+</svg>

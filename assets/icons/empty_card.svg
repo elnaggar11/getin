@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200" width="320" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0f3fa"/>
+      <stop offset="100%" style="stop-color:#e2e8f5"/>
+    </linearGradient>
+    <linearGradient id="chip" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dce3ef"/>
+      <stop offset="100%" style="stop-color:#c8d2e5"/>
+    </linearGradient>
+    <linearGradient id="plusRing" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#c8d5f0"/>
+      <stop offset="100%" style="stop-color:#b0c0e8"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#a0b0d0" flood-opacity="0.25"/>
+    </filter>
+    <filter id="inset">
+      <feDropShadow dx="0" dy="1" stdDeviation="2" flood-color="#8090b8" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Card -->
+  <rect x="16" y="16" width="288" height="168" rx="18" ry="18"
+    fill="url(#bg)"
+    filter="url(#shadow)"
+    stroke="#d4ddf0"
+    stroke-width="1.5"
+    stroke-dasharray="10 6"/>
+
+  <!-- Decorative arc top-right -->
+  <circle cx="270" cy="30" r="70" fill="none" stroke="#d4ddf0" stroke-width="1" opacity="0.6" stroke-dasharray="4 4"/>
+  <circle cx="270" cy="30" r="50" fill="none" stroke="#d4ddf0" stroke-width="1" opacity="0.4" stroke-dasharray="4 4"/>
+
+  <!-- Chip -->
+  <rect x="44" y="58" width="42" height="32" rx="7" fill="url(#chip)" filter="url(#inset)"/>
+  <!-- Chip grid lines -->
+  <line x1="44" y1="74" x2="86" y2="74" stroke="#b8c5dc" stroke-width="1"/>
+  <line x1="65" y1="58" x2="65" y2="90" stroke="#b8c5dc" stroke-width="1"/>
+  <rect x="52" y="66" width="26" height="16" rx="3" fill="#cdd8ea" opacity="0.6"/>
+
+  <!-- Magnetic stripe hint (thin bar at top) -->
+  <rect x="16" y="43" width="288" height="10" rx="0" fill="#dde4f0" opacity="0.5"/>
+
+  <!-- Card number dots — 3 groups of 4 -->
+  <!-- Group 1 -->
+  <circle cx="44"  cy="126" r="3.5" fill="#b8c5dc"/>
+  <circle cx="56"  cy="126" r="3.5" fill="#b8c5dc"/>
+  <circle cx="68"  cy="126" r="3.5" fill="#b8c5dc"/>
+  <circle cx="80"  cy="126" r="3.5" fill="#b8c5dc"/>
+  <!-- Group 2 -->
+  <circle cx="104" cy="126" r="3.5" fill="#b8c5dc"/>
+  <circle cx="116" cy="126" r="3.5" fill="#b8c5dc"/>
+  <circle cx="128" cy="126" r="3.5" fill="#b8c5dc"/>
+  <circle cx="140" cy="126" r="3.5" fill="#b8c5dc"/>
+  <!-- Group 3 -->
+  <circle cx="164" cy="126" r="3.5" fill="#b8c5dc"/>
+  <circle cx="176" cy="126" r="3.5" fill="#b8c5dc"/>
+  <circle cx="188" cy="126" r="3.5" fill="#b8c5dc"/>
+  <circle cx="200" cy="126" r="3.5" fill="#b8c5dc"/>
+
+  <!-- Name placeholder bar -->
+  <rect x="44" y="152" width="90" height="8" rx="4" fill="#cdd6ea" opacity="0.7"/>
+  <rect x="44" y="152" width="54" height="8" rx="4" fill="#c0cce0" opacity="0.5"/>
+
+  <!-- Plus button -->
+  <circle cx="258" cy="126" r="26" fill="url(#plusRing)" opacity="0.35"/>
+  <circle cx="258" cy="126" r="20" fill="#ffffff" opacity="0.85"/>
+  <line x1="258" y1="116" x2="258" y2="136" stroke="#7a93c8" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="248" y1="126" x2="268" y2="126" stroke="#7a93c8" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
