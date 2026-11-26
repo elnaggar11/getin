@@ -79,13 +79,18 @@ class SourceDataRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Row(
-          children: [
-            SourceDataImage(image: image),
-            10.pw,
-            SourceDataText(title: title, subtitle: subtitle),
-          ],
+        Expanded(
+          child: Row(
+            children: [
+              SourceDataImage(image: image),
+              10.pw,
+              Expanded(
+                child: SourceDataText(title: title, subtitle: subtitle),
+              ),
+            ],
+          ),
         ),
+        10.pw,
         ScanButton(onTap: onScanTap),
       ],
     );
@@ -126,6 +131,8 @@ class SourceDataText extends StatelessWidget {
       children: [
         Text(
           title,
+          maxLines: 2,
+          overflow: TextOverflow.ellipsis,
           style: TextStyles.font14BlackBold.copyWith(
             fontWeight: FontWeights.semiBold,
             color: LightThemeColors.primary,
@@ -134,6 +141,8 @@ class SourceDataText extends StatelessWidget {
         3.ph,
         Text(
           subtitle,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
           style: TextStyles.font12BlackLight.copyWith(
             fontWeight: FontWeights.regular,
             color: LightThemeColors.lightgrey,

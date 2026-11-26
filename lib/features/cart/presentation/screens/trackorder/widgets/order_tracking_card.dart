@@ -71,12 +71,16 @@ class OrderItemHeader extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Row(
-          children: [
-            const OrderIconContainer(),
-            10.pw,
-            OrderInfoText(orderItemModel: orderItemModel),
-          ],
+        Expanded(
+          child: Row(
+            children: [
+              const OrderIconContainer(),
+              10.pw,
+              Expanded(
+                child: OrderInfoText(orderItemModel: orderItemModel),
+              ),
+            ],
+          ),
         ),
         //  SvgPicture.asset(SvgAssets.settings),
       ],

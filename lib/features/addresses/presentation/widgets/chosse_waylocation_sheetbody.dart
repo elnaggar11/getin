@@ -57,33 +57,40 @@ class ChosseWaylocationSheetbody extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    Container(
-                      width: 58,
-                      height: 58,
-                      decoration: BoxDecoration(
-                        color: LightThemeColors.white,
-                        borderRadius: BorderRadius.circular(
-                          24,
+                Expanded(
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 58,
+                        height: 58,
+                        decoration: BoxDecoration(
+                          color: LightThemeColors.white,
+                          borderRadius: BorderRadius.circular(
+                            24,
+                          ),
+                        ),
+                        child: Center(
+                          child: SvgPicture.asset(
+                            SvgAssets.homeDelivery,
+                          ),
                         ),
                       ),
-                      child: Center(
-                        child: SvgPicture.asset(
-                          SvgAssets.homeDelivery,
+                      10.pw,
+                      Expanded(
+                        child: Text(
+                          LocalizationHelper.tr.deliver_to_home,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyles.font14BlackMedium.copyWith(
+                            color: LightThemeColors.primary,
+                            fontWeight: FontWeights.semiBold,
+                          ),
                         ),
                       ),
-                    ),
-                    10.pw,
-                    Text(
-                      LocalizationHelper.tr.deliver_to_home,
-                      style: TextStyles.font14BlackMedium.copyWith(
-                        color: LightThemeColors.primary,
-                        fontWeight: FontWeights.semiBold,
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
+                8.pw,
                 Container(
                   width: 58,
                   height: 58,
@@ -123,33 +130,40 @@ class ChosseWaylocationSheetbody extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  children: [
-                    Container(
-                      width: 58,
-                      height: 58,
-                      decoration: BoxDecoration(
-                        color: LightThemeColors.white,
-                        borderRadius: BorderRadius.circular(
-                          24,
+                Expanded(
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 58,
+                        height: 58,
+                        decoration: BoxDecoration(
+                          color: LightThemeColors.white,
+                          borderRadius: BorderRadius.circular(
+                            24,
+                          ),
+                        ),
+                        child: Center(
+                          child: SvgPicture.asset(
+                            SvgAssets.location,
+                          ),
                         ),
                       ),
-                      child: Center(
-                        child: SvgPicture.asset(
-                          SvgAssets.location,
+                      10.pw,
+                      Expanded(
+                        child: Text(
+                          LocalizationHelper.tr.pickup_from_branch,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyles.font14BlackMedium.copyWith(
+                            color: LightThemeColors.primary,
+                            fontWeight: FontWeights.semiBold,
+                          ),
                         ),
                       ),
-                    ),
-                    10.pw,
-                    Text(
-                      LocalizationHelper.tr.pickup_from_branch,
-                      style: TextStyles.font14BlackMedium.copyWith(
-                        color: LightThemeColors.primary,
-                        fontWeight: FontWeights.semiBold,
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
+                8.pw,
                 Container(
                   width: 58,
                   height: 58,

@@ -206,63 +206,76 @@ class PaymentMethodWidget extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Container(
-                    width: 56,
-                    height: 56,
-                    decoration: const BoxDecoration(
-                      color: LightThemeColors.white,
-                      boxShadow: [
-                        BoxShadow(
-                            offset: Offset(0, 8),
-                            blurRadius: 30,
-                            color: LightThemeColors.white),
-                      ],
-                      shape: BoxShape.circle,
-                    ),
-                    child: Center(
-                      child: SvgPicture.asset(
-                        model?.displayBrand?.toLowerCase() == 'visa'
-                            ? SvgAssets.visa // Placeholder for Visa
-                            : model?.displayBrand?.toLowerCase() == 'cash'
-                                ? SvgAssets.cash
-                                : SvgAssets.masterCard,
+              Expanded(
+                child: Row(
+                  children: [
+                    Container(
+                      width: 56,
+                      height: 56,
+                      decoration: const BoxDecoration(
+                        color: LightThemeColors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              offset: Offset(0, 8),
+                              blurRadius: 30,
+                              color: LightThemeColors.white),
+                        ],
+                        shape: BoxShape.circle,
                       ),
-                    ),
-                  ),
-                  10.pw,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        model?.displayBrand ?? model?.brand ?? 'Master Card',
-                        style: TextStyles.font14BlackBold.copyWith(
-                          color: LightThemeColors.primary,
-                          fontWeight: FontWeights.semiBold,
+                      child: Center(
+                        child: SvgPicture.asset(
+                          model?.displayBrand?.toLowerCase() == 'visa'
+                              ? SvgAssets.visa // Placeholder for Visa
+                              : model?.displayBrand?.toLowerCase() == 'cash'
+                                  ? SvgAssets.cash
+                                  : SvgAssets.masterCard,
                         ),
                       ),
-                      5.ph,
-                      Text(
-                        model?.cardNumber ?? "**** 4869",
-                        style: TextStyles.font12BlackLight.copyWith(
-                          color: LightThemeColors.grey,
-                          fontWeight: FontWeights.regular,
-                        ),
-                      ),
-                      5.ph,
-                      if (model?.expireDate != null)
-                        Text(
-                          model?.expireDate ?? '',
-                          style: TextStyles.font12BlackLight.copyWith(
-                            color: LightThemeColors.grey,
-                            fontWeight: FontWeights.regular,
+                    ),
+                    10.pw,
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            model?.displayBrand ??
+                                model?.brand ??
+                                'Master Card',
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyles.font14BlackBold.copyWith(
+                              color: LightThemeColors.primary,
+                              fontWeight: FontWeights.semiBold,
+                            ),
                           ),
-                        ),
-                    ],
-                  ),
-                ],
+                          5.ph,
+                          Text(
+                            model?.cardNumber ?? "**** 4869",
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyles.font12BlackLight.copyWith(
+                              color: LightThemeColors.grey,
+                              fontWeight: FontWeights.regular,
+                            ),
+                          ),
+                          5.ph,
+                          if (model?.expireDate != null)
+                            Text(
+                              model?.expireDate ?? '',
+                              maxLines: 1,
+                              overflow: TextOverflow.ellipsis,
+                              style: TextStyles.font12BlackLight.copyWith(
+                                color: LightThemeColors.grey,
+                                fontWeight: FontWeights.regular,
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
+              8.pw,
               Center(
                 child: Container(
                   width: 58,
