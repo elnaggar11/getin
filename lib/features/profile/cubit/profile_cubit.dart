@@ -24,6 +24,12 @@ class ProfileCubit extends Cubit<ProfileStates> {
       Utils.userModel.totalPoints = response!.totalPoints.toString();
       Utils.userModel.totalStars = response.totalStars.toString();
       Utils.userModel.image = response.image;
+      if (response.isReviewAccount != null) {
+        Utils.userModel.isReviewAccount = response.isReviewAccount;
+      }
+      if (response.allowedPaymentMethods != null) {
+        Utils.userModel.allowedPaymentMethods = response.allowedPaymentMethods;
+      }
       emit(GetProfileSuccess(response));
     } catch (e) {
       emit(GetProfileFailure(e.toString()));

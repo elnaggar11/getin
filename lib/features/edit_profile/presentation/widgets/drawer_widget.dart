@@ -4,7 +4,6 @@ import 'dart:ui';
 import 'package:getincoffee/core/Router/Router.dart';
 import 'package:getincoffee/core/Router/navigation_helper.dart';
 import 'package:getincoffee/core/extensions/widget_extensions.dart';
-import 'package:getincoffee/core/general/genera_repositories.dart';
 import 'package:getincoffee/core/generated/images.dart';
 import 'package:getincoffee/core/localization/localization_helper.dart';
 import 'package:getincoffee/core/resources/font_manager.dart';
@@ -73,7 +72,7 @@ class _ProfileDrawerWidgetState extends State<ProfileDrawerWidget> {
             Navigator.pushNamed(context, Routes.MyStarsScreen);
           },
         ),
-        if (Utils.userModel.isReviewAccount != true)
+        if (!Utils.userModel.shouldHideCardPayment)
           MenuItemModel(
             title: LocalizationHelper.tr.payment_method,
             icon: SvgAssets.cash,
@@ -327,20 +326,6 @@ Download now:
                               icon: items(context)[i].icon,
                               route: items(context)[i].route,
                               onTap: items(context)[i].onTap,
-                              logout: i == 10
-                                  ? () async {
-                                      final response = await GeneralRepostioreis
-                                          .instance
-                                          .logout();
-                                      if (response == true) {
-                                        Navigator.pushNamedAndRemoveUntil(
-                                          context,
-                                          Routes.loginScreen,
-                                          (r) => false,
-                                        );
-                                      }
-                                    }
-                                  : null,
                             );
                           }),
                         ),

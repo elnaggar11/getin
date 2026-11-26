@@ -13,6 +13,12 @@ class UserModel {
   String? accessToken;
   bool? isReviewAccount;
   List<String>? allowedPaymentMethods;
+
+  bool get shouldHideCardPayment =>
+      isReviewAccount == true ||
+      (allowedPaymentMethods != null &&
+          !allowedPaymentMethods!.contains('money'));
+
   UserModel({
     this.id,
     this.firstName,
@@ -47,8 +53,10 @@ class UserModel {
     final userData = map['user'] is Map
         ? Map<String, dynamic>.from(map['user'] as Map)
         : map;
-    final methods = userData['allowed_payment_methods'];
-    final rawReviewFlag = userData['is_review_account'];
+    final methods =
+        userData['allowed_payment_methods'] ?? map['allowed_payment_methods'];
+    final rawReviewFlag =
+        userData['is_review_account'] ?? map['is_review_account'];
     return UserModel(
       id: userData['id']?.toString() ?? '',
       typeDelivery: userData['type_delivery']?.toString() ?? "",
@@ -63,7 +71,9 @@ class UserModel {
           "",
       isReviewAccount: rawReviewFlag is bool
           ? rawReviewFlag
-          : rawReviewFlag == 1 || rawReviewFlag == '1',
+          : rawReviewFlag == 1 ||
+              rawReviewFlag == '1' ||
+              rawReviewFlag?.toString().toLowerCase() == 'true',
       allowedPaymentMethods: methods is List
           ? methods.map((method) => method.toString()).toList()
           : null,
